@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LifeLite/LifeLite.iml" filepath="$PROJECT_DIR$/LifeLite/LifeLite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LifeLiteProject.iml" filepath="$PROJECT_DIR$/LifeLiteProject.iml" />
+    </modules>
+  </component>
+</project>
+
