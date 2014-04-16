@@ -9,6 +9,17 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="75sp"
+        android:textColor="#fff"
+        android:background="@android:color/transparent"
+        android:id="@+id/die"
+        android:onClick="roll_d20"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/starting_life"
         android:textSize="120sp"
         android:textColor="#fff"
@@ -158,5 +169,19 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:textSize="50sp"
+        android:id="@+id/reset"
         android:onClick="reset"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="P"
+        android:paddingBottom="10dp"
+        android:textSize="50sp"
+        android:textColor="#458B00"
+        android:id="@+id/poison"
+        android:background="@android:color/transparent"
+        android:layout_above="@+id/reset"
+        android:onClick="poison"
+        android:layout_centerInParent="true" />
 </RelativeLayout>

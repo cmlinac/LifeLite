@@ -2,6 +2,7 @@ package com.cmlinac.lifelite;
 
 import android.annotation.TargetApi;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,12 @@ import android.widget.Button;
 
 public class LifeCounterActivity extends ActionBarActivity {
     private static SharedPreferences mPrefs;
+    private boolean displayRoll = false;
+    private int life_total_left = 20;
+    private int life_total_right=20;
+    private int poison_total_left = 0;
+    private int poison_total_right = 0;
+    private boolean displayPoison = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,6 +177,47 @@ public class LifeCounterActivity extends ActionBarActivity {
         Button p2Life = (Button)findViewById(R.id.p2_life);
         p1Life.setText(R.string.starting_life);
         p2Life.setText(R.string.starting_life);
+        life_total_left = 20;
+        life_total_right=20;
+        poison_total_left = 0;
+        poison_total_right = 0;
+    }
+
+    public void roll_d20(View v) {
+
+        displayRoll = !displayRoll;
+        Button die = (Button)findViewById(R.id.die);
+        if (displayRoll) {
+            Integer rand = (int)((Math.random() * 20) + 1);
+            die.setText(rand.toString());
+        }
+        else {
+            die.setText("");
+        }
+
+    }
+
+    public void poison(View v) {
+        Button left = (Button)findViewById(R.id.p1_life);
+        Button right = (Button)findViewById(R.id.p2_life);
+        displayPoison = !displayPoison;
+        if (displayPoison) {
+            life_total_left = Integer.parseInt(left.getText().toString());
+            life_total_right = Integer.parseInt(right.getText().toString());
+            left.setTextColor(Color.parseColor("#458B00"));
+            right.setTextColor(Color.parseColor("#458B00"));
+            left.setText(((Integer)poison_total_left).toString());
+            right.setText(((Integer)poison_total_right).toString());
+        }
+        else {
+            poison_total_left = Integer.parseInt(left.getText().toString());
+            poison_total_right = Integer.parseInt(right.getText().toString());
+            left.setTextColor(Color.parseColor("#FFFFFF"));
+            right.setTextColor(Color.parseColor("#FFFFFF"));
+            left.setText(((Integer)life_total_left).toString());
+            right.setText(((Integer)life_total_right).toString());
+        }
+
     }
 
 }

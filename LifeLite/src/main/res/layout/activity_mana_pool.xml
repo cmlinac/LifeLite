@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#000000">
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="100dp"
+        android:paddingTop="100dp"
+        android:paddingRight="10dp"
+        android:text="@string/minus"
+        android:textSize="60sp"
+        android:textColor="#fff"
+        android:background="@android:color/transparent"
+        android:id="@+id/white_minus"
+        android:onClick="white_minus"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/plus"
+        android:textSize="60sp"
+        android:paddingTop="100dp"
+        android:textColor="#fff"
+        android:background="@android:color/transparent"
+        android:id="@+id/white_plus"
+        android:layout_below="@+id/p1_life"
+        android:layout_toRightOf="@+id/white_minus"
+        android:onClick="white_plus"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/zero"
+        android:textSize="45sp"
+        android:paddingLeft="25dp"
+        android:paddingTop="110dp"
+        android:textColor="#fff"
+        android:layout_toRightOf="@+id/white_plus"
+        android:id="@+id/white_count" />
+
+</RelativeLayout>
