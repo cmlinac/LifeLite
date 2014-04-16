@@ -177,10 +177,13 @@ public class LifeCounterActivity extends ActionBarActivity {
         Button p2Life = (Button)findViewById(R.id.p2_life);
         p1Life.setText(R.string.starting_life);
         p2Life.setText(R.string.starting_life);
+        p1Life.setTextColor(Color.parseColor("#FFFFFF"));
+        p2Life.setTextColor(Color.parseColor("#FFFFFF"));
         life_total_left = 20;
         life_total_right=20;
         poison_total_left = 0;
         poison_total_right = 0;
+        displayPoison = false;
     }
 
     public void roll_d20(View v) {
